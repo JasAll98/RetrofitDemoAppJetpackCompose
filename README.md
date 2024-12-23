@@ -14,6 +14,6 @@
    implementation("com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:1.0.0") - <a href="https://github.com/JakeWharton/retrofit2-kotlinx-serialization-converter">kotlinx-serialization-converter</a>
 <hr>
    c) Coil for showing images
-   implementation("io.coil-kt.coil:coil-compose:3.0.4")  - <a href="https://coil-kt.github.io/coil/compose/">coil-kt.github.io/coil/compose</a>
+   implementation("io.coil-kt:coil-compose:2.7.0")  - <a href="https://coil-kt.github.io/coil/compose/">coil-kt.github.io/coil/compose</a>
 
 </pre>
