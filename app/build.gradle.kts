@@ -14,7 +14,7 @@ android {
     defaultConfig {
         applicationId = "com.itimperiya.retrofitdemoapp"
         minSdk = 26
-        targetSdk = 35
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -49,7 +49,7 @@ dependencies {
     implementation(libs.squareup.okhttp)
 
     // Implementing Coil for showing IMG
-    implementation(libs.coil)
+    implementation(libs.io.coil)
 
     // Implementing Kotlin serialization with Serialization Converter
     implementation(libs.kotlinx.serialization)
