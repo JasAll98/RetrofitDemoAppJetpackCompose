@@ -1,7 +1,9 @@
 package com.itimperiya.retrofitdemoapp.ui
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -27,7 +29,7 @@ fun QurbaqaApp() {
             QurbaqaTopBar(scrollBehavior)
         }
     ) {
-        Surface (modifier = Modifier.fillMaxSize()) {
+        Surface (modifier = Modifier.fillMaxSize().background(MaterialTheme.colorScheme.background)) {
             val qurbaqaViewModel: QurbaqaViewModel = viewModel(factory = QurbaqaViewModel.Factory)
             HomeScreen(qurbaqaUiState = qurbaqaViewModel.qurbaqaUiState, retryAction = qurbaqaViewModel::getQurbaqalar, contentPadding = it)
         }
@@ -41,7 +43,8 @@ fun QurbaqaTopBar(scrollBehavior: TopAppBarScrollBehavior) {
         scrollBehavior = scrollBehavior,
         title = {
             Text(
-                text = stringResource(R.string.app_name)
+                text = stringResource(R.string.app_name),
+                style = MaterialTheme.typography.displayLarge
             )
         }
     )

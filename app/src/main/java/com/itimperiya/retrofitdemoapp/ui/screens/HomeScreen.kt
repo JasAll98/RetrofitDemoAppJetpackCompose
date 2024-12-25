@@ -16,6 +16,7 @@ import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
 import androidx.compose.material3.LocalContentColor
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ProgressIndicatorDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -28,7 +29,6 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
-import coil.compose.SubcomposeAsyncImage
 import coil.request.ImageRequest
 import com.itimperiya.retrofitdemoapp.R
 import com.itimperiya.retrofitdemoapp.network.Qurbaqa
@@ -64,8 +64,8 @@ fun QurbaqaCard(qurbaqa: Qurbaqa, modifier: Modifier = Modifier) {
     ) {
         Column {
             Row (modifier = Modifier.padding(8.dp)) {
-                Text(text = qurbaqa.name)
-                Text(text = " (${qurbaqa.type})")
+                Text(text = qurbaqa.name, style = MaterialTheme.typography.displayLarge)
+                Text(text = " (${qurbaqa.type})", style = MaterialTheme.typography.displayLarge)
             }
             AsyncImage(
                 model = ImageRequest.Builder(LocalContext.current)
@@ -75,7 +75,7 @@ fun QurbaqaCard(qurbaqa: Qurbaqa, modifier: Modifier = Modifier) {
                 contentScale = ContentScale.Crop,
                 modifier = Modifier.fillMaxWidth()
             )
-            Text(text = qurbaqa.description, modifier = Modifier.padding(4.dp))
+            Text(text = qurbaqa.description, modifier = Modifier.padding(4.dp), style = MaterialTheme.typography.bodyLarge)
         }
     }
 
