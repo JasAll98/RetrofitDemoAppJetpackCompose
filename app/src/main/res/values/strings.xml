@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">Retrofit Demo APP</string>
+    <string name="app_name">Qurbaqalar</string>
+
+    <string name="no_connection">Internetga ulanish yo‘q</string>
+    <string name="retry">Yangilash</string>
+    <string name="qurbaqa_photo">Qurbaqa photo</string>
 </resources>

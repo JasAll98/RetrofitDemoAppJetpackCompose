@@ -11,12 +11,13 @@ import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.itimperiya.retrofitdemoapp.QurbaqaApplication
 import com.itimperiya.retrofitdemoapp.data.QurbaqaRepository
+import com.itimperiya.retrofitdemoapp.network.Qurbaqa
 import kotlinx.coroutines.launch
 import okio.IOException
 import retrofit2.HttpException
 
 sealed interface QurbaqaUiState {
-    data class Success(val qurbaqa: String) : QurbaqaUiState
+    data class Success(val qurbaqa: List<Qurbaqa>) : QurbaqaUiState
     object Loading : QurbaqaUiState
     object Error : QurbaqaUiState
 }
@@ -34,9 +35,8 @@ class QurbaqaViewModel(private val qurbaqaRepository: QurbaqaRepository) : ViewM
         viewModelScope.launch {
             QurbaqaUiState.Loading
             qurbaqaUiState = try {
-                val listResult = qurbaqaRepository.getQurbaqalar()
                 QurbaqaUiState.Success(
-                    "Success: ${listResult.size} ma'lumotlar soni"
+                    qurbaqaRepository.getQurbaqalar()
                 )
             } catch (e: IOException) {
                 QurbaqaUiState.Error
