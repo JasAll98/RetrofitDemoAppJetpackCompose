@@ -22,7 +22,7 @@ fun QurbaqaApp() {
         }
     ) {
         Surface (modifier = Modifier.fillMaxSize()) {
-            val qurbaqaViewModel: QurbaqaViewModel = viewModel()
+            val qurbaqaViewModel: QurbaqaViewModel = viewModel(factory = QurbaqaViewModel.Factory)
             HomeScreen(qurbaqaUiState = qurbaqaViewModel.qurbaqaUiState, contentPadding = it)
         }
     }
